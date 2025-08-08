@@ -1,0 +1,437 @@
+type: collection.insomnia.rest/5.0
+name: test case http request
+meta:
+  id: wrk_1bf8e77b939349b5ad39da3c915ce6d5
+  created: 1754672724604
+  modified: 1754677443306
+  description: ""
+collection:
+  - name: Request with DB
+    meta:
+      id: fld_e5272d72a81d4bf8a1082f43779c0f20
+      created: 1754675306155
+      modified: 1754677469417
+      sortKey: -1754675306355
+      description: ""
+    children:
+      - url: http://localhost:8080/moviesdb
+        name: Input Movie DB
+        meta:
+          id: req_d81b46b1e0874fb0bd28794d25482964
+          created: 1754616086675
+          modified: 1754676095326
+          isPrivate: false
+          description: ""
+          sortKey: -1754675823748
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "The legend of Aang",
+            	"description": "The legend of Aang",
+            	"duration": 2400,
+            	"artists": [
+            			"Ronaldo",
+            			"Messi"
+            	],
+            	"genres": [
+            		"Adventure",
+            		"Action"
+            	]
+            }
+        parameters:
+          - name: second
+            value: "0"
+            disabled: true
+            id: pair_66b39fb5451042f4863edfdb3113aa8a
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/moviesdb
+        name: Get list movie DB
+        meta:
+          id: req_d5912e86c13a47a1aee4ae893690e4b9
+          created: 1754624874281
+          modified: 1754676713250
+          isPrivate: false
+          description: ""
+          sortKey: -1754675823598
+        method: GET
+        parameters:
+          - name: page
+            value: "2"
+            disabled: false
+            id: pair_7e1473c6a3dc4256977503b703e5eb32
+          - name: limit
+            value: "2"
+            disabled: false
+            id: pair_43640da9459649929f87118abaa721cb
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/moviesdb/2
+        name: Update Movie DB
+        meta:
+          id: req_26bc5ac046f747818ee36f78469cfb50
+          created: 1754625174195
+          modified: 1754676678929
+          isPrivate: false
+          description: ""
+          sortKey: -1754675823648
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Legends of aang",
+            	"description": "Legends of aang.",
+            	"duration": 500,
+            	"artists": [
+            			"Asep",
+            			"Yuyun"
+            	],
+            	"genres": [
+            		"Action",
+            		"Adventure"
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/searchdb/type
+        name: Search Movie DB By type
+        meta:
+          id: req_b1cb5264e6a3475482fc71e5242110c2
+          created: 1754625942579
+          modified: 1754676737226
+          isPrivate: false
+          description: ""
+          sortKey: -1754675823398
+        method: GET
+        parameters:
+          - name: search_type
+            value: duration
+            disabled: false
+            id: pair_27c2ba82ba2f4ec49bb034063cf2fd34
+          - name: q
+            value: "2400"
+            disabled: false
+            id: pair_5bc3a29b13744654a1a5cc4e0974d1da
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/searchdb
+        name: Search Movie DB General
+        meta:
+          id: req_04e144e7447c415283ce715b3a3e0f83
+          created: 1754674758699
+          modified: 1754676752023
+          isPrivate: false
+          description: ""
+          sortKey: -1754675823298
+        method: GET
+        parameters:
+          - name: q
+            value: leg
+            disabled: false
+            id: pair_5bc3a29b13744654a1a5cc4e0974d1da
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Request without DB
+    meta:
+      id: fld_c3354447fcf9494e9301211fb0082f4c
+      created: 1754676029693
+      modified: 1754677455665
+      sortKey: -1754676029693
+      description: ""
+    children:
+      - url: http://localhost:8080/movies
+        name: Add new film
+        meta:
+          id: req_6c452e3ba1a747f498c56769fe3c09f3
+          created: 1754581653195
+          modified: 1754676100727
+          isPrivate: false
+          description: ""
+          sortKey: -1754676100689
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "The Lord of the Rings: The Return of the King",
+              "description": "The Lord of the Rings: The Return of the King",
+              "duration": 34534,
+              "artists": ["wer", "ert"],
+              "genres": ["asd", "sdf"]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/movies/3
+        name: edit Film
+        meta:
+          id: req_f4d7f1069af64020abf63d381598dc94
+          created: 1754581891594
+          modified: 1754676108492
+          isPrivate: false
+          description: ""
+          sortKey: -1754676100589
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "The Godfather",
+              "description": "Fantastic.",
+              "duration": 2400,
+              "artists": ["Jane Doe", "John Smith"],
+              "genres": ["Sci-Fi", "Action", "Mafia"]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.4.0
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/search/type
+        name: Search Movies by Type
+        meta:
+          id: req_df092b031f564e20948e7b2f5d16c41e
+          created: 1754582146521
+          modified: 1754676604271
+          isPrivate: false
+          description: ""
+          sortKey: -1754676100289
+        method: GET
+        parameters:
+          - id: pair_3267375eecdd487cb34425664ddf43ec
+            name: search_type
+            value: artist
+            description: ""
+            disabled: false
+          - name: q
+            value: jane
+            disabled: false
+            id: pair_a225f5ad372e4320a9b6a6dd6b5d4d91
+        headers:
+          - name: User-Agent
+            value: insomnia/11.4.0
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/movies
+        name: Get List Movie
+        meta:
+          id: req_92b0c2d4d6174e2b9123040f7567d4fb
+          created: 1754616215464
+          modified: 1754676126084
+          isPrivate: false
+          description: ""
+          sortKey: -1754676100489
+        method: GET
+        parameters:
+          - name: page
+            value: "1"
+            disabled: false
+            id: pair_82b7e276bb284825b1236bbf7573286e
+          - name: limit
+            value: "4"
+            disabled: false
+            id: pair_dbc1a9310e9b4533b0322dcbc65aacfb
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/search
+        name: Search Movie General
+        meta:
+          id: req_fb4f880a82fa42b6ba9941e8fa0aa3ff
+          created: 1754672808418
+          modified: 1754676349925
+          isPrivate: false
+          description: ""
+          sortKey: -1754676100389
+        method: GET
+        parameters:
+          - id: pair_878056cc0a0d41b18881b66f87d2d32c
+            name: q
+            value: god
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        scripts:
+          preRequest: ""
+          afterResponse: ""
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - url: http://localhost:8080/convert
+    name: Convert into Roketin time
+    meta:
+      id: req_b6a73a10fcd34470a497d4c1bee55fa9
+      created: 1754578305424
+      modified: 1754676386247
+      isPrivate: false
+      description: ""
+      sortKey: -1754676029793
+    method: GET
+    parameters:
+      - name: hour
+        value: "0"
+        disabled: false
+        id: pair_4ad407126e6f4989b35132f1e8d76cfc
+      - name: minute
+        value: "0"
+        disabled: false
+        id: pair_a334f74c8e9e4ca48750f87dc821a0ef
+      - name: second
+        value: "0"
+        disabled: false
+        id: pair_1a8ef34c0c594d8cadb4eaf2e9de953f
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+    scripts:
+      preRequest: ""
+      afterResponse: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7cebd995270b41ea919e0dc167e93f67
+    created: 1754616078939
+    modified: 1754616078939
+environments:
+  name: Base Environment
+  meta:
+    id: env_700047000b3f40f091d02386eedd07ca
+    created: 1754616078938
+    modified: 1754616078938
+    isPrivate: false
+  subEnvironments:
+    - name: New Environment
+      meta:
+        id: env_567c4ff950ae493f9a0df9f9a9e20efd
+        created: 1754578355545
+        modified: 1754578361497
+        isPrivate: false
+        sortKey: 1754578355545
+      data:
+        localhost: http://localhost:8080/
